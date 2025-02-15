@@ -6,7 +6,7 @@ export default function DeletePopup() {
   const setProjects = useSetAtom(codes);
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50">
+    <div className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50">
       <div className="popup relative bg-white text-black py-12 px-20 rounded-xl text-center">
         <h1 className="font-bold text-2xl mb-6">
           Do you really want to delete this project?
@@ -18,14 +18,15 @@ export default function DeletePopup() {
           Yes
         </button>
         <button
-          onClick={() =>
+          onClick={() => {
             setIsDeleting({
               ...isDeleting,
               delete: false,
               projectID: "",
               projectTitle: "",
-            })
-          }
+            });
+            document.body.style.overflow = "auto";
+          }}
           className="bg-gray-600 text-white px-12 py-2 text-xl hover:bg-green-400 transition duration-200"
         >
           No

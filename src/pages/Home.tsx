@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="py-8 px-12 min-h-[90vh]">
+    <main className="py-8 px-12 min-h-[90vh]">
       {isOpen && <Popup />}
       {isDeleting.delete && <DeletePopup />}
 
@@ -35,6 +35,6 @@ export default function Home() {
 
         <Add />
       </div>
-    </div>
+    </main>
   );
 }
