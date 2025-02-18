@@ -30,6 +30,7 @@ export function addFile(title: string, projects: any, setProjects: any) {
     css: "",
     js: "",
     id: v4(),
+    divClass: "",
   };
 
   setProjects([...projects, fileTemplate]);

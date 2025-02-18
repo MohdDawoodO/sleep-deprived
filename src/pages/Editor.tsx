@@ -43,6 +43,11 @@ export default function Editor() {
         setProject({ ...project, js: e.target.value });
         projects[i].js = e.target.value;
         break;
+
+      case "class":
+        setProject({ ...project, divClass: e.target.value });
+        projects[i].divClass = e.target.value;
+        break;
     }
 
     localStorage.setItem("projects", JSON.stringify(projects));
@@ -103,7 +108,14 @@ export default function Editor() {
             {"<"}body{">"}
           </p>
           <p className="my-1">
-            {"<"}div id="app"{">"}
+            {"<"}div class="
+            <input
+              className="bg-[rgb(30,30,30)] text-center"
+              type="text"
+              value={project.divClass}
+              onChange={(e) => changeStuff(e, "class")}
+            ></input>
+            "{">"}
           </p>
 
           <textarea

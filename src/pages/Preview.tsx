@@ -29,5 +29,10 @@ export default function Preview() {
 
   if (!project) return;
 
-  return <div id="app" dangerouslySetInnerHTML={{ __html: finalCode }}></div>;
+  return (
+    <div
+      className={project.divClass}
+      dangerouslySetInnerHTML={{ __html: finalCode }}
+    ></div>
+  );
 }
