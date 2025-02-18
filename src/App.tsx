@@ -4,6 +4,7 @@ import Preview from "./pages/Preview";
 import Nav from "./components/Nav";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+import { AnimatePresence } from "motion/react";
 
 function App() {
   const location = useLocation();
@@ -11,11 +12,13 @@ function App() {
   return (
     <>
       {!location.pathname.includes("/preview/") && <Nav />}
-      <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="/projects/:id" Component={Editor} />
-        <Route path="/preview/:id" Component={Preview} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/projects/:id" Component={Editor} />
+          <Route path="/preview/:id" Component={Preview} />
+        </Routes>
+      </AnimatePresence>
     </>
   );
 }
