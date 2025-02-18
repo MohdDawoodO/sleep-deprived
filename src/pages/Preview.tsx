@@ -7,7 +7,11 @@ export default function Preview() {
   const [finalCode, setFinalCode] = useState("");
 
   useEffect(() => {
-    let projects = JSON.parse(localStorage.getItem("projects") ?? "[]");
+    loadPreview();
+  }, []);
+
+  async function loadPreview() {
+    let projects = await JSON.parse(localStorage.getItem("projects") ?? "[]");
 
     const id = location.pathname.split("/")[2];
     const currentProject = projects.filter((a: any) => a.id === id)[0];
@@ -21,7 +25,7 @@ export default function Preview() {
       script.textContent = currentProject.js;
       document.body.appendChild(script);
     }, 500);
-  }, []);
+  }
 
   if (!project) return;
 

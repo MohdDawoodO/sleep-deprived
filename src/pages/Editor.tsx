@@ -8,10 +8,15 @@ export default function Editor() {
   const location = useLocation();
 
   useEffect(() => {
+    loadEditor();
+  }, []);
+
+  async function loadEditor() {
+    let projects = await JSON.parse(localStorage.getItem("projects") ?? "[]");
     const id = location.pathname.split("/")[2];
     const currentProject = projects.filter((a: any) => a.id === id);
     setProject(currentProject[0]);
-  }, []);
+  }
 
   function changeStuff(e: any, work: any) {
     const i = projects.findIndex((a: any) => a.id === project.id);
