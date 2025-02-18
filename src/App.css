@@ -8,3 +8,14 @@ body {
 button {
   cursor: pointer;
 }
+
+body::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+  appearance: none;
+  width: 7px;
+}
+body::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
+  background: rgb(75, 75, 75);
+  border-radius: 2rem;
+}

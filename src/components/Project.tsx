@@ -16,9 +16,9 @@ export default function Project({
   const [isDeleting, setIsDeleting] = useAtom(deletingProject);
 
   return (
-    <div className="bg-[rgb(20,20,20)] grow basis-[25rem] mx-4 my-4 rounded-xl h-[40vh] p-6 px-10 overflow-hidden relative">
-      <h2 className="text-xl">{title}</h2>
-      <p className=" my-4 line-clamp-9">
+    <div className="bg-[rgb(20,20,20)] grow basis-[27rem] mx-4 my-4 rounded-xl h-[45vh] p-6 px-10 overflow-hidden relative">
+      <h2 className="text-xl font-semibold">{title}</h2>
+      <p className=" my-4 line-clamp-11">
         {code !== "" ? code : "<!-- This file is waiting for you to edit-->"}
       </p>
       <button

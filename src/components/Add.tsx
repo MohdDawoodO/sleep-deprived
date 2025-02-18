@@ -12,7 +12,7 @@ export default function Add() {
         setIsOpen(true);
         document.body.style.overflow = "hidden";
       }}
-      className="bg-[rgb(20,20,20)] grow basis-[25rem] mx-4 my-4 rounded-xl min-h-[40vh] p-6 px-10 overflow-hidden cursor-pointer flex flex-col items-center justify-center hover:opacity-85 duration-200"
+      className="bg-[rgb(20,20,20)] grow basis-[27rem] mx-4 my-4 rounded-xl min-h-[45vh] p-6 px-10 overflow-hidden cursor-pointer flex flex-col items-center justify-center hover:opacity-85 duration-200"
     >
       <p className="text-lg">Make new project!</p>
       <img className="py-4" src={add} alt="add" />
@@ -21,8 +21,6 @@ export default function Add() {
 }
 
 export function addFile(title: string, projects: any, setProjects: any) {
-  console.log(title);
-
   let newProjects = projects;
   const fileTemplate = {
     title: title ? title : "New Document",

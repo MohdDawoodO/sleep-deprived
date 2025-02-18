@@ -72,9 +72,9 @@ export default function Editor() {
         Test
       </Link>
 
-      <div className="HTML grow flex flex-col m-4">
+      <div id="html" className="grow flex flex-col m-4 basis-md">
         <h2 className="mb-2">HTML:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[70vh] flex-col flex p-4">
           <p className="my-1">
             {"<"}!DOCTYPE html{">"}
           </p>
@@ -105,7 +105,7 @@ export default function Editor() {
             {"<"}/head{">"}
           </p>
           <p className="my-1">
-            {"<"}body{">"}
+            {"<"}body id="root"{">"}
           </p>
           <p className="my-1">
             {"<"}div class="
@@ -120,7 +120,7 @@ export default function Editor() {
 
           <textarea
             name="html"
-            className="bg-[rgb(30,30,30)] h-[45vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
+            className="bg-[rgb(30,30,30)] h-[28vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
             cols={30}
             rows={10}
             value={project.html}
@@ -139,12 +139,12 @@ export default function Editor() {
         </div>
       </div>
 
-      <div className="CSS grow flex flex-col m-4">
+      <div id="css" className="grow flex flex-col m-4 basis-md">
         <h2 className="mb-2">CSS:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[70vh] flex-col flex p-4">
           <textarea
             name="css"
-            className="bg-[rgb(30,30,30)] h-[75vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
+            className="bg-[rgb(30,30,30)] h-[70vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
             cols={30}
             rows={10}
             value={project.css}
@@ -153,12 +153,12 @@ export default function Editor() {
         </div>
       </div>
 
-      <div className="JS grow flex flex-col m-4">
+      <div id="js" className="grow flex flex-col m-4 basis-md">
         <h2 className="mb-2">Javascript:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[70vh] flex-col flex p-4">
           <textarea
             name="js"
-            className="bg-[rgb(30,30,30)] h-[75vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
+            className="bg-[rgb(30,30,30)] h-[70vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
             cols={30}
             rows={10}
             value={project.js}
