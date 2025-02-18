@@ -5,11 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "jotai";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Provider>
-        <App />
-      </Provider>
-    </BrowserRouter>
-  </StrictMode>
+  <BrowserRouter>
+    <Provider>
+      <App />
+    </Provider>
+  </BrowserRouter>
 );

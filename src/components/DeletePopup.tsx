@@ -12,7 +12,10 @@ export default function DeletePopup() {
           Do you really want to delete this project?
         </h1>
         <button
-          onClick={() => deleteProject(isDeleting, setIsDeleting, setProjects)}
+          onClick={() => {
+            deleteProject(isDeleting, setIsDeleting, setProjects);
+            document.body.style.overflow = "auto";
+          }}
           className="bg-gray-600 text-white px-12 py-2 mr-8 text-xl hover:bg-red-500 duration-200"
         >
           Yes

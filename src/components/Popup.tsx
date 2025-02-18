@@ -11,6 +11,7 @@ export default function Popup() {
   const setIsOpen = useSetAtom(popupOpen);
 
   function formFill(e: any) {
+    document.body.style.overflow = "auto";
     e.preventDefault();
     addFile(input, projects, setProjects);
     setInput("");

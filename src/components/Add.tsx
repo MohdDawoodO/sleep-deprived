@@ -26,9 +26,7 @@ export function addFile(title: string, projects: any, setProjects: any) {
   let newProjects = projects;
   const fileTemplate = {
     title: title ? title : "New Document",
-    html: `<body>
-      <!-- this file is waiting for you to edit -->
-    <body>`,
+    html: ``,
     css: "",
     js: "",
     id: v4(),

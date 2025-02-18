@@ -18,7 +18,9 @@ export default function Project({
   return (
     <div className="bg-[rgb(20,20,20)] grow basis-[25rem] mx-4 my-4 rounded-xl min-h-[40vh] p-6 px-10 overflow-hidden relative">
       <h2 className="text-xl">{title}</h2>
-      <p className=" py-4">{code}</p>
+      <p className=" py-4">
+        {code !== "" ? code : "<!-- This file is waiting for you to edit-->"}
+      </p>
       <button
         onClick={() => {
           setIsDeleting({
