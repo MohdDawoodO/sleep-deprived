@@ -4,6 +4,8 @@ import { addFile } from "./Add";
 import { codes } from "../states";
 import { useAtom } from "jotai";
 import { useState } from "react";
+import { motion } from "motion/react";
+import { popupAnim } from "../animations";
 
 export default function Popup() {
   const [projects, setProjects]: any = useAtom(codes);
@@ -19,8 +21,18 @@ export default function Popup() {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50">
-      <div className="popup relative bg-white text-black py-12 px-20 rounded-xl text-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
+      exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeOut" } }}
+      className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50"
+    >
+      <motion.div
+        initial={popupAnim.initial}
+        animate={popupAnim.animate}
+        exit={popupAnim.exit}
+        className="popup relative bg-white text-black py-12 px-20 rounded-xl text-center"
+      >
         <button
           onClick={() => {
             setIsOpen(false);
@@ -43,7 +55,7 @@ export default function Popup() {
           </button>
         </form>
         <p>Dont worry, you can change it anytime</p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

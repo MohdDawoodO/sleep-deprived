@@ -2,12 +2,17 @@ import add from "../assets/add.svg";
 import { v4 } from "uuid";
 import { popupOpen } from "../states";
 import { useSetAtom } from "jotai";
+import { motion } from "motion/react";
+import { projectAnim } from "../animations";
 
 export default function Add() {
   const setIsOpen = useSetAtom(popupOpen);
 
   return (
-    <div
+    <motion.div
+      initial={projectAnim.initial}
+      animate={projectAnim.animate}
+      exit={projectAnim.exit}
       onClick={() => {
         setIsOpen(true);
         document.body.style.overflow = "hidden";
@@ -16,7 +21,7 @@ export default function Add() {
     >
       <p className="text-lg">Make new project!</p>
       <img className="py-4" src={add} alt="add" />
-    </div>
+    </motion.div>
   );
 }
 

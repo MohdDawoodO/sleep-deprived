@@ -1,13 +1,25 @@
 import { useAtom, useSetAtom } from "jotai";
 import { codes, deletingProject } from "../states";
+import { motion } from "motion/react";
+import { popupAnim } from "../animations";
 
 export default function DeletePopup() {
   const [isDeleting, setIsDeleting] = useAtom(deletingProject);
   const setProjects = useSetAtom(codes);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50">
-      <div className="popup relative bg-white text-black py-12 px-20 rounded-xl text-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
+      exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeOut" } }}
+      className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50"
+    >
+      <motion.div
+        initial={popupAnim.initial}
+        animate={popupAnim.animate}
+        exit={popupAnim.exit}
+        className="popup relative bg-white text-black py-12 px-20 rounded-xl text-center"
+      >
         <h1 className="font-bold text-2xl mb-6">
           Do you really want to delete this project?
         </h1>
@@ -35,8 +47,8 @@ export default function DeletePopup() {
           No
         </button>
         <p className="mt-4">This action can not be undone</p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -48,7 +60,7 @@ function deleteProject(
   let projects = JSON.parse(localStorage.getItem("projects") ?? "[]");
 
   const newProjects = projects.filter(
-    (a: any) => a.id !== isDeleting.projectID && a.title
+    (a: any) => a.id !== isDeleting.projectID
   );
 
   localStorage.setItem("projects", JSON.stringify(newProjects));

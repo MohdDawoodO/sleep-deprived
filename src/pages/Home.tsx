@@ -6,6 +6,7 @@ import { useAtom } from "jotai";
 import { popupOpen } from "../states";
 import Add from "../components/Add";
 import DeletePopup from "../components/DeletePopup";
+import { AnimatePresence, LayoutGroup } from "motion/react";
 
 export default function Home() {
   const [projects, setProjects]: any = useAtom(codes);
@@ -18,22 +19,27 @@ export default function Home() {
 
   return (
     <main className="py-8 px-12 min-h-[90vh]">
-      {isOpen && <Popup />}
-      {isDeleting.delete && <DeletePopup />}
+      <AnimatePresence mode="wait">
+        {isOpen && <Popup />}
+        {isDeleting.delete && <DeletePopup />}
+      </AnimatePresence>
 
       <div className="projects flex flex-wrap">
-        {projects.map((project: any) => {
-          return (
-            <Project
-              title={project.title}
-              code={project.html}
-              id={project.id}
-              key={project.id}
-            />
-          );
-        })}
-
-        <Add />
+        <AnimatePresence>
+          <LayoutGroup>
+            {projects.map((project: any) => {
+              return (
+                <Project
+                  title={project.title}
+                  code={project.html}
+                  id={project.id}
+                  key={project.id}
+                />
+              );
+            })}
+            <Add />
+          </LayoutGroup>
+        </AnimatePresence>
       </div>
     </main>
   );
