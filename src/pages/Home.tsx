@@ -25,8 +25,8 @@ export default function Home() {
       </AnimatePresence>
 
       <div className="projects flex flex-wrap">
-        <AnimatePresence>
-          <LayoutGroup>
+        <LayoutGroup>
+          <AnimatePresence>
             {projects.map((project: any) => {
               return (
                 <Project
@@ -37,9 +37,9 @@ export default function Home() {
                 />
               );
             })}
-            <Add />
-          </LayoutGroup>
-        </AnimatePresence>
+            <Add />;
+          </AnimatePresence>
+        </LayoutGroup>
       </div>
     </main>
   );

@@ -25,11 +25,14 @@ export default function Project({
       exit={projectAnim.exit}
       className="bg-[rgb(20,20,20)] grow basis-[27rem] mx-4 my-4 rounded-xl h-[45vh] p-6 px-10 overflow-hidden relative"
     >
-      <h2 className="text-xl font-semibold">{title}</h2>
-      <p className=" my-4 line-clamp-11">
+      <motion.h2 layout="position" className="text-xl font-semibold">
+        {title}
+      </motion.h2>
+      <motion.p layout="position" className=" my-4 line-clamp-11">
         {code !== "" ? code : "<!-- This file is waiting for you to edit-->"}
-      </p>
-      <button
+      </motion.p>
+      <motion.button
+        layout="position"
         onClick={() => {
           setIsDeleting({
             ...isDeleting,
@@ -41,14 +44,19 @@ export default function Project({
         }}
         className="absolute top-0 left-full translate-x-[-100%] rounded-tr-lg p-2 w-10 bg-[rgb(50,50,50)] hover:opacity-75 duration-200 ml-[1px]"
       >
-        <img src={deleteIcon} alt="delete this file" />
-      </button>
+        <motion.img layout="position" src={deleteIcon} alt="delete this file" />
+      </motion.button>
       <Link
         target="_blank"
         className="absolute top-0 left-full translate-x-[-200%] w-[2.5rem] h-[2.5rem] p-1 bg-[rgb(50,50,50)] hover:opacity-75 duration-200 flex items-center justify-center rounded-bl-xl"
         to={`/projects/${id}`}
       >
-        <img className="w-[1.4rem] h-auto" src={edit} alt="edit this file" />
+        <motion.img
+          layout="position"
+          className="w-[1.4rem] h-auto"
+          src={edit}
+          alt="edit this file"
+        />
       </Link>
     </motion.div>
   );
