@@ -9,7 +9,7 @@ export default function Nav() {
   const [id, setId]:any = useState()
   
   function previewFn(){
-    window.open(`/preview/${id}`)
+    window.open(`/#/preview/${id}`)
   }
 
   useEffect(()=>{
