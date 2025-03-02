@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { motion } from 'motion/react'
+import { pageAnim } from "../animations";
 
 export default function Editor() {
   let projects = JSON.parse(localStorage.getItem("projects") ?? "[]");
@@ -63,14 +64,7 @@ export default function Editor() {
     );
 
   return (
-    <main className="py-8 px-12 min-h-[90vh] flex flex-wrap">
-      <Link
-        to={`/preview/${project.id}`}
-        target="_blank"
-        className="test-button px-6 py-2 border-2 text-[#05da76] border-[#05da76] hover:bg-[#05da76] hover:text-white duration-500 absolute top-0 left-full translate-x-[-200%] translate-y-[75%] "
-      >
-        Test
-      </Link>
+    <motion.main initial={pageAnim.intital} animate={pageAnim.animate} exit={pageAnim.exit} className="py-8 px-12 min-h-[90vh] flex flex-wrap">
 
       <div id="html" className="grow flex flex-col m-4 basis-md">
         <h2 className="mb-2">HTML:</h2>
@@ -166,6 +160,6 @@ export default function Editor() {
           ></textarea>
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

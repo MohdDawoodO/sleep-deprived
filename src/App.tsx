@@ -13,7 +13,7 @@ function App() {
     <>
       {!location.pathname.includes("/preview/") && <Nav />}
       <AnimatePresence mode="wait">
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" Component={Home} />
           <Route path="/projects/:id" Component={Editor} />
           <Route path="/preview/:id" Component={Preview} />
