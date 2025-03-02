@@ -21,7 +21,7 @@ export default function Nav() {
   return (
     <motion.nav initial={navAnim.intital} animate={navAnim.animate} className="min-h-[10vh] px-16 font-semibold flex items-center justify-between">
       <h1 className="text-2xl">
-        <Link to={"/"}>Sleep Deprivation</Link>
+        <Link to={"/"}>Sleep Deprived</Link>
       </h1>
       {id && <button
         onClick={previewFn}

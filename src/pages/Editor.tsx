@@ -56,16 +56,15 @@ export default function Editor() {
 
   if (!project)
     return (
-      <div className="py-8 px-12 min-h-[90vh] text-center">
+      <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5}} className="py-8 px-12 min-h-[90vh] text-center">
         <h1 className="font-medium text-2xl">
           Error: This project does not exist or is deleted
         </h1>
-      </div>
+      </motion.div>
     );
 
   return (
     <motion.main initial={pageAnim.intital} animate={pageAnim.animate} exit={pageAnim.exit} className="py-8 px-12 min-h-[90vh] flex flex-wrap">
-
       <div id="html" className="grow flex flex-col m-4 basis-md">
         <h2 className="mb-2">HTML:</h2>
         <div className="code bg-[rgb(20,20,20)] min-h-[70vh] flex-col flex p-4">
