@@ -10,8 +10,9 @@ export default function Add() {
 
   return (
     <motion.div
-      initial={projectAnim.initial}
-      animate={projectAnim.animate}
+      variants={projectAnim}
+      initial="initial"
+      animate="animate"
       onClick={() => {
         setIsOpen(true);
         document.body.style.overflow = "hidden";

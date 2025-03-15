@@ -31,26 +31,26 @@ export default function Popup() {
         initial={popupAnim.initial}
         animate={popupAnim.animate}
         exit={popupAnim.exit}
-        className="popup relative bg-white text-black py-12 px-20 rounded-xl text-center"
+        className="popup relative bg-[#202020] text-white py-12 px-20 rounded-xl text-center"
       >
         <button
           onClick={() => {
             setIsOpen(false);
             document.body.style.overflow = "auto";
           }}
-          className="cancel absolute top-0 left-full translate-x-[-98%] bg-gray-700 text-white px-3 py-1 rounded-tr-lg rounded-bl-xl hover:opacity-[92%] duration-200"
+          className="cancel absolute top-0 left-full translate-x-[-98%] bg-[#3c3c3c] text-white px-3 py-1 rounded-tr-lg rounded-bl-xl hover:opacity-[92%] duration-200"
         >
           X
         </button>
         <h1 className="font-bold text-2xl mb-6">Name your project</h1>
         <form className="flex felx-col mb-2" onSubmit={formFill}>
           <input
-            className="border-2 border-gray-600 py-1 px-3"
+            className="border-2 border-[#3c3c3c] py-1 px-3"
             value={input}
             type="text"
             onChange={(e) => setInput(e.target.value)}
           />
-          <button className="bg-gray-600 text-white px-3 hover:opacity-[92%] duration-200">
+          <button className="bg-[#3c3c3c] text-white px-3 hover:opacity-[92%] duration-200">
             Confirm
           </button>
         </form>

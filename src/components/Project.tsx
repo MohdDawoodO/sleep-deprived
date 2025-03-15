@@ -28,9 +28,11 @@ export default function Project({
       <motion.h2 layout="position" className="text-xl font-semibold">
         {title}
       </motion.h2>
+
       <motion.p layout="position" className=" my-4 line-clamp-11">
         {code !== "" ? code : "<!-- This file is waiting for you to edit-->"}
       </motion.p>
+
       <motion.button
         layout="position"
         onClick={() => {
@@ -46,9 +48,11 @@ export default function Project({
       >
         <motion.img layout="position" src={deleteIcon} alt="delete this file" />
       </motion.button>
+
       <Link
         className="absolute top-0 left-full translate-x-[-200%] w-[2.5rem] h-[2.5rem] p-1 bg-[rgb(50,50,50)] hover:opacity-75 duration-200 flex items-center justify-center rounded-bl-xl"
         to={`/projects/${id}`}
+        onClick={() => (document.body.style.overflow = "hidden")}
       >
         <motion.img
           layout="position"

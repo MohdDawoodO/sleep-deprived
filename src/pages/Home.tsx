@@ -7,7 +7,7 @@ import { popupOpen } from "../states";
 import Add from "../components/Add";
 import DeletePopup from "../components/DeletePopup";
 import { AnimatePresence, LayoutGroup } from "motion/react";
-import { motion } from 'motion/react'
+import { motion } from "motion/react";
 import { pageAnim } from "../animations";
 
 export default function Home() {
@@ -16,11 +16,17 @@ export default function Home() {
   const [isDeleting] = useAtom(deletingProject);
 
   useEffect(() => {
+    document.body.style.overflow = "auto";
     setProjects(JSON.parse(localStorage.getItem("projects") ?? "[]"));
   }, []);
 
   return (
-    <motion.main initial={pageAnim.intital} animate={pageAnim.animate} exit={pageAnim.exit} className="py-8 px-12 min-h-[90vh]">
+    <motion.main
+      initial={pageAnim.intital}
+      animate={pageAnim.animate}
+      exit={pageAnim.exit}
+      className="py-8 px-12 min-h-[90vh]"
+    >
       <AnimatePresence mode="wait">
         {isOpen && <Popup />}
         {isDeleting.delete && <DeletePopup />}

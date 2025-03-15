@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import components from "../componentData";
+import loadProject from "../components/LoadProject";
 
 export default function Preview() {
   const location = useLocation();
@@ -9,18 +10,17 @@ export default function Preview() {
   const componentsArray = components();
 
   useEffect(() => {
-    loadPreview();
+    setCode();
+
+    window.addEventListener("mouseover", () => {
+      setCode();
+    });
   }, []);
 
-  async function loadPreview() {
-    let projects = await JSON.parse(localStorage.getItem("projects") ?? "[]");
+  async function setCode() {
+    const currentProject = await loadProject(location, setProject);
+
     let newProject: any;
-
-    const id = location.pathname.split("/")[2];
-    const currentProject = projects.filter((a: any) => a.id === id)[0];
-    document.title = currentProject.title;
-    setProject(currentProject);
-
     componentsArray.forEach((component) => {
       const startHtml = currentProject.html.replaceAll(
         component.startTag,
@@ -29,12 +29,14 @@ export default function Preview() {
 
       const newHtml = startHtml.replaceAll(component.endTag, component.codeEnd);
 
-      newProject = { ...currentProject, html: newHtml };
+      newProject = { ...project, html: newHtml };
 
       setProject({ ...project, html: newHtml });
     });
 
-    setFinalCode(newProject.html + `<style>${newProject.css}</style>`);
+    setFinalCode(newProject.html + `<style>${currentProject.css}</style>`);
+
+    document.title = currentProject.title;
 
     setTimeout(() => {
       const script = document.createElement("script");

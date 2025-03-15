@@ -18,7 +18,7 @@ export default function DeletePopup() {
         initial={popupAnim.initial}
         animate={popupAnim.animate}
         exit={popupAnim.exit}
-        className="popup relative bg-white text-black py-12 px-20 rounded-xl text-center"
+        className="popup relative bg-[#202020] text-white py-12 px-20 rounded-xl text-center"
       >
         <h1 className="font-bold text-2xl mb-6">
           Do you really want to delete this project?
@@ -28,7 +28,7 @@ export default function DeletePopup() {
             deleteProject(isDeleting, setIsDeleting, setProjects);
             document.body.style.overflow = "auto";
           }}
-          className="bg-gray-600 text-white px-12 py-2 mr-8 text-xl hover:bg-red-500 duration-200"
+          className="bg-[#3c3c3c] text-white px-12 py-2 mr-8 text-xl hover:bg-[#c22126] duration-200"
         >
           Yes
         </button>
@@ -42,7 +42,7 @@ export default function DeletePopup() {
             });
             document.body.style.overflow = "auto";
           }}
-          className="bg-gray-600 text-white px-12 py-2 text-xl hover:bg-green-400 transition duration-200"
+          className="bg-[#3c3c3c] text-white px-12 py-2 text-xl hover:bg-[#13b162] transition duration-200"
         >
           No
         </button>
