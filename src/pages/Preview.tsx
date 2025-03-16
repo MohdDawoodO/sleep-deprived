@@ -11,10 +11,6 @@ export default function Preview() {
 
   useEffect(() => {
     setCode();
-
-    window.addEventListener("mouseover", () => {
-      setCode();
-    });
   }, []);
 
   async function setCode() {
@@ -31,7 +27,7 @@ export default function Preview() {
 
       newProject = { ...project, html: newHtml };
 
-      setProject({ ...project, html: newHtml });
+      setProject(newProject);
     });
 
     setFinalCode(newProject.html + `<style>${currentProject.css}</style>`);
@@ -40,7 +36,7 @@ export default function Preview() {
 
     setTimeout(() => {
       const script = document.createElement("script");
-      script.textContent = newProject.js;
+      script.textContent = currentProject.js;
       document.body.appendChild(script);
     }, 500);
   }
