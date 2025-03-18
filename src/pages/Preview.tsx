@@ -17,6 +17,7 @@ export default function Preview() {
     const currentProject = await loadProject(location, setProject);
 
     let newProject: any;
+
     componentsArray.forEach((component) => {
       const startHtml = currentProject.html.replaceAll(
         component.startTag,
@@ -25,6 +26,7 @@ export default function Preview() {
 
       const newHtml = startHtml.replaceAll(component.endTag, component.codeEnd);
 
+      currentProject.html = newHtml;
       newProject = { ...project, html: newHtml };
 
       setProject(newProject);
