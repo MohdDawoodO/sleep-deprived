@@ -24,7 +24,7 @@ export default function Nav() {
     <motion.nav
       initial={navAnim.intital}
       animate={navAnim.animate}
-      className="min-h-[10vh] px-16 font-semibold flex items-center justify-between"
+      className="min-h-[10vh] px-16 font-semibold flex items-center justify-between px-32"
     >
       <h1 className="text-2xl">
         <Link

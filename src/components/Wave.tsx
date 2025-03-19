@@ -3,25 +3,6 @@ import { waveAnim } from "../animations";
 
 export default function Wave() {
   return (
-    // <svg
-    //   width="1920"
-    //   height="298"
-    //   viewBox="0 0 1920 298"
-    //   fill="none"
-    //   xmlns="http://www.w3.org/2000/svg"
-    //   className="absolute top-[50%] left-0 translate-y-[-50%] z-[-10]"
-    // >
-    //   <motion.path
-    //     variants={waveAnim}
-    //     initial="initial"
-    //     animate="animate"
-    //     id="wave"
-    //     d="M0 95.869C0 95.869 238.817 293 478.747 293C799.174 293 925.764 4.99997 1233.05 5C1540.34 5.00003 1728.5 74.8873 1920 169.359"
-    //     stroke="#BF91BE"
-    //     stroke-width="10"
-    //     stroke-linecap="round"
-    //   />
-    // </svg>
     <svg
       viewBox="0 0 1440 363"
       fill="none"

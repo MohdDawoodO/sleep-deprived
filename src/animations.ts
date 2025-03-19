@@ -25,7 +25,7 @@ export const popupAnim = {
 
 export const projectAnim = {
   initial: {
-    scale: 0.8,
+    scale: 0,
     opacity: 0,
   },
   animate: {
@@ -63,7 +63,7 @@ export const pageAnim = {
     transition: {
       duration: 0.1,
       ease: "easeOut",
-      staggerChildren: 0.1,
+      staggerChildren: 0.15,
       when: "beforeChildren",
     },
   },
@@ -71,6 +71,27 @@ export const pageAnim = {
     opacity: 0,
     y: 100,
     transition: { duration: 0.1, ease: "easeOut" },
+  },
+};
+export const landingAnim = {
+  initial: {
+    opacity: 0,
+    y: -100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      staggerChildren: 0.25,
+      when: "beforeChildren",
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: 100,
+    transition: { duration: 0.2, ease: "easeOut" },
   },
 };
 
@@ -87,4 +108,18 @@ export const waveAnim = {
     pathLength: 1,
     transition: { duration: 1.5, ease: "easeIn" },
   },
+};
+
+export const textAnim = {
+  initial: { y: "100%" },
+  animate: { y: "0%", transition: { duration: 0.5, ease: "easeOut" } },
+};
+export const buttonAnim = {
+  initial: { y: "150%" },
+  animate: { y: "0%", transition: { duration: 0.2, ease: "easeOut" } },
+};
+
+export const scaleAnim = {
+  initial: { opacity: 0, scale: 1.2 },
+  animate: { opacity: 0.75, scale: 1, transition: { duration: 1 } },
 };
