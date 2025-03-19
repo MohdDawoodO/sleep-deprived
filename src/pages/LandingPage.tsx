@@ -8,7 +8,7 @@ export default function LandingPage() {
     document.body.style.overflowY = "auto";
   });
 
-  const videoSrc = "src/assets/demo-vid.mkv";
+  const videoSrc = "src/demo-vid.mkv";
 
   return (
     <motion.main
