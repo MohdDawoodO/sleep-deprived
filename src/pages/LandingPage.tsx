@@ -2,13 +2,12 @@ import { useEffect } from "react";
 import { motion } from "motion/react";
 import { pageAnim } from "../animations";
 import Wave from "../components/Wave";
+import demoVideo from "../assets/demo.mp4";
 
 export default function LandingPage() {
   useEffect(() => {
     document.body.style.overflowY = "auto";
   });
-
-  const videoSrc = "src/demo-vid.mkv";
 
   return (
     <motion.main
@@ -42,7 +41,7 @@ export default function LandingPage() {
         <div className="video Preview grow basis-xl">
           <video
             className="rounded-3xl border-[rgb(50,50,50)] border-[6px] shadow-[2px_2px_20px_rgba(255,255,255,0.1)] pointer-events-none"
-            src={videoSrc}
+            src={demoVideo}
             autoPlay
             muted
             loop
