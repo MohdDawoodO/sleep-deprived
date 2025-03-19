@@ -11,8 +11,6 @@ export default function Add() {
   return (
     <motion.div
       variants={projectAnim}
-      initial="initial"
-      animate="animate"
       onClick={() => {
         setIsOpen(true);
         document.body.style.overflow = "hidden";

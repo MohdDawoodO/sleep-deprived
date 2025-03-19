@@ -53,14 +53,19 @@ export const navAnim = {
 };
 
 export const pageAnim = {
-  intital: {
+  initial: {
     opacity: 0,
     y: -100,
   },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.1, ease: "easeOut" },
+    transition: {
+      duration: 0.1,
+      ease: "easeOut",
+      staggerChildren: 0.1,
+      when: "beforeChildren",
+    },
   },
   exit: {
     opacity: 0,
@@ -73,4 +78,13 @@ export const fadeAnim = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
   exit: { opacity: 0, transition: { duration: 0.3, ease: "easeOut" } },
+};
+
+export const waveAnim = {
+  initial: { pathOffset: 1, pathLength: 0 },
+  animate: {
+    pathOffset: 0,
+    pathLength: 1,
+    transition: { duration: 1.5, ease: "easeIn" },
+  },
 };

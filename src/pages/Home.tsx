@@ -16,15 +16,16 @@ export default function Home() {
   const [isDeleting] = useAtom(deletingProject);
 
   useEffect(() => {
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
     setProjects(JSON.parse(localStorage.getItem("projects") ?? "[]"));
   }, []);
 
   return (
     <motion.main
-      initial={pageAnim.intital}
-      animate={pageAnim.animate}
-      exit={pageAnim.exit}
+      variants={pageAnim}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       className="py-8 px-12 min-h-[90vh]"
     >
       <AnimatePresence mode="wait">

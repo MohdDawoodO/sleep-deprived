@@ -10,7 +10,7 @@ export default function Editor() {
   const location = useLocation();
 
   useEffect(() => {
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
     loadProject(location, setProject);
   }, []);
 
@@ -65,7 +65,7 @@ export default function Editor() {
 
   return (
     <motion.main
-      initial={pageAnim.intital}
+      initial={pageAnim.initial}
       animate={pageAnim.animate}
       exit={pageAnim.exit}
       className="py-8 px-12 min-h-[90vh] flex flex-wrap"

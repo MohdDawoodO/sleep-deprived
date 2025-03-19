@@ -28,7 +28,7 @@ export default function DeletePopup() {
             deleteProject(isDeleting, setIsDeleting, setProjects);
             document.body.style.overflow = "auto";
           }}
-          className="bg-[#3c3c3c] text-white px-12 py-2 mr-8 text-xl hover:bg-[#c22126] duration-200"
+          className="bg-[#3c3c3c] text-white px-12 py-2 mr-8 text-xl hover:bg-[#c22126] duration-200 rounded"
         >
           Yes
         </button>
@@ -42,7 +42,7 @@ export default function DeletePopup() {
             });
             document.body.style.overflow = "auto";
           }}
-          className="bg-[#3c3c3c] text-white px-12 py-2 text-xl hover:bg-[#13b162] transition duration-200"
+          className="bg-[#3c3c3c] text-white px-12 py-2 text-xl hover:bg-[#13b162] transition duration-200 rounded"
         >
           No
         </button>
