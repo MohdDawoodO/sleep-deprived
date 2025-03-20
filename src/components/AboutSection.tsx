@@ -5,12 +5,12 @@ import { buttonAnim, scaleAnim, textAnim } from "../animations";
 
 export default function AboutSection() {
   return (
-    <section className="hero flex flex-wrap justify-center min-h-[90vh] items-center relative px-32">
+    <section className="hero flex flex-wrap justify-center min-h-[90vh] items-center relative px-24">
       <div className="intro grow basis-xl mb-[8rem]">
         <div className="hide overflow-hidden">
           <motion.h1
             variants={textAnim}
-            className="text-5xl font-medium leading-28"
+            className="text-5xl font-medium leading-14 pb-8"
           >
             Fast, Free, and Browser-Based IDE
           </motion.h1>
@@ -43,10 +43,10 @@ export default function AboutSection() {
         </div>
       </div>
 
-      <div className="video Preview grow basis-xl">
+      <div className="video Preview grow basis-xl backdrop-blur-xs">
         <motion.video
           variants={scaleAnim}
-          className="rounded-3xl border-[rgb(50,50,50)] border-[6px] shadow-[2px_2px_20px_rgba(255,255,255,0.1)] pointer-events-none opacity-75 w-full"
+          className="rounded-3xl border-[rgb(50,50,50)] border-[6px] pointer-events-none opacity-75 backdrop-blur-3xl w-full shadow-[2px_2px_20px_rgba(255,255,255,0.1)]"
           src={demoVideo}
           autoPlay
           muted

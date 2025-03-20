@@ -25,15 +25,15 @@ export default function Home() {
       variants={pageAnim}
       initial="initial"
       animate="animate"
-      exit="exit"
-      className="py-8 px-12 min-h-[90vh]"
+      exit={pageAnim.exit}
+      className="py-8 px-24 min-h-[90vh]"
     >
       <AnimatePresence mode="wait">
         {isOpen && <Popup />}
         {isDeleting.delete && <DeletePopup />}
       </AnimatePresence>
 
-      <div className="projects flex flex-wrap">
+      <div className="projects flex flex-wrap gap-8">
         <LayoutGroup>
           <AnimatePresence>
             {projects.map((project: any) => {

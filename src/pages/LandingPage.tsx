@@ -10,7 +10,6 @@ export default function LandingPage() {
 
   return (
     <motion.main
-      className=""
       variants={landingAnim}
       initial="initial"
       animate="animate"

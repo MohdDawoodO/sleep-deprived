@@ -21,7 +21,10 @@ export default function Project({
     <motion.div
       layoutId={id}
       variants={projectAnim}
-      className="bg-[rgb(20,20,20)] grow basis-[27rem] mx-4 my-4 rounded-xl h-[45vh] p-6 px-10 overflow-hidden relative"
+      initial="initial"
+      animate="animate"
+      exit={projectAnim.exit}
+      className="bg-[rgb(20,20,20)] grow basis-[27rem] rounded-xl h-[45vh] p-6 px-10 overflow-hidden relative opacity-0"
     >
       <motion.h2 layout="position" className="text-xl font-semibold">
         {title}

@@ -41,7 +41,7 @@ export const projectAnim = {
 };
 
 export const navAnim = {
-  intital: {
+  initial: {
     y: -100,
     opacity: 0,
   },
@@ -84,14 +84,14 @@ export const landingAnim = {
     transition: {
       duration: 0.5,
       ease: "easeOut",
-      staggerChildren: 0.25,
+      staggerChildren: 0.2,
       when: "beforeChildren",
     },
   },
   exit: {
     opacity: 0,
     y: 100,
-    transition: { duration: 0.2, ease: "easeOut" },
+    transition: { duration: 0.1, ease: "easeOut" },
   },
 };
 
@@ -112,14 +112,14 @@ export const waveAnim = {
 
 export const textAnim = {
   initial: { y: "100%" },
-  animate: { y: "0%", transition: { duration: 0.5, ease: "easeOut" } },
+  animate: { y: "0%", transition: { duration: 0.3, ease: "easeOut" } },
 };
 export const buttonAnim = {
   initial: { y: "150%" },
-  animate: { y: "0%", transition: { duration: 0.2, ease: "easeOut" } },
+  animate: { y: "0%", transition: { duration: 0.05, ease: "easeOut" } },
 };
 
 export const scaleAnim = {
-  initial: { opacity: 0, scale: 1.2 },
-  animate: { opacity: 0.75, scale: 1, transition: { duration: 1 } },
+  initial: { opacity: 0, scale: 1.1 },
+  animate: { opacity: 0.75, scale: 1, transition: { duration: 0.75 } },
 };

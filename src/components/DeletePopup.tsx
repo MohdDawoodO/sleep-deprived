@@ -15,8 +15,9 @@ export default function DeletePopup() {
       className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50"
     >
       <motion.div
-        initial={popupAnim.initial}
-        animate={popupAnim.animate}
+        variants={popupAnim}
+        initial="initial"
+        animate="animate"
         exit={popupAnim.exit}
         className="popup relative bg-[#202020] text-white py-12 px-20 rounded-xl text-center"
       >
