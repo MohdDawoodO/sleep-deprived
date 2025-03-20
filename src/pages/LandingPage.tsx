@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion } from "motion/react";
 import { landingAnim } from "../animations";
 import AboutSection from "../components/AboutSection";
+import FeatureSection from "../components/FeaturesSection";
 
 export default function LandingPage() {
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function LandingPage() {
       exit="exit"
     >
       <AboutSection />
+      <FeatureSection />
     </motion.main>
   );
 }

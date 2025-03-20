@@ -73,7 +73,7 @@ export default function Editor() {
     >
       <div id="html" className="grow flex flex-col basis-md">
         <h2 className="mb-2">HTML:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[79vh] flex-col flex p-4">
           <p className="my-1">
             {"<"}!DOCTYPE html{">"}
           </p>
@@ -140,7 +140,7 @@ export default function Editor() {
 
       <div id="css" className="grow flex flex-col basis-md">
         <h2 className="mb-2">CSS:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[79vh] flex-col flex p-4">
           <textarea
             name="css"
             className="bg-[rgb(30,30,30)] h-full max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
@@ -154,7 +154,7 @@ export default function Editor() {
 
       <div id="js" className="grow flex flex-col basis-md">
         <h2 className="mb-2">Javascript:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[79vh] flex-col flex p-4">
           <textarea
             name="js"
             className="bg-[rgb(30,30,30)] h-full max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
