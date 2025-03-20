@@ -10,7 +10,7 @@ export default function Editor() {
   const location = useLocation();
 
   useEffect(() => {
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
     loadProject(location, setProject);
   }, []);
 
@@ -55,7 +55,7 @@ export default function Editor() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="py-8 px-12 min-h-[90vh] text-center"
+        className="py-8 px-24 min-h-[90vh] text-center"
       >
         <h1 className="font-medium text-2xl">
           Error: This project does not exist or is deleted
@@ -65,14 +65,15 @@ export default function Editor() {
 
   return (
     <motion.main
-      initial={pageAnim.intital}
-      animate={pageAnim.animate}
+      variants={pageAnim}
+      initial="initial"
+      animate="animate"
       exit={pageAnim.exit}
-      className="py-8 px-12 min-h-[90vh] flex flex-wrap"
+      className="py-8 px-24 gap-8 min-h-[90vh] flex flex-wrap"
     >
-      <div id="html" className="grow flex flex-col m-4 basis-md">
+      <div id="html" className="grow flex flex-col basis-md">
         <h2 className="mb-2">HTML:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[70vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
           <p className="my-1">
             {"<"}!DOCTYPE html{">"}
           </p>
@@ -118,7 +119,7 @@ export default function Editor() {
 
           <textarea
             name="html"
-            className="bg-[rgb(30,30,30)] h-[28vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
+            className="bg-[rgb(30,30,30)] h-full max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
             cols={30}
             rows={10}
             value={project.html}
@@ -137,12 +138,12 @@ export default function Editor() {
         </div>
       </div>
 
-      <div id="css" className="grow flex flex-col m-4 basis-md">
+      <div id="css" className="grow flex flex-col basis-md">
         <h2 className="mb-2">CSS:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[70vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
           <textarea
             name="css"
-            className="bg-[rgb(30,30,30)] h-[70vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
+            className="bg-[rgb(30,30,30)] h-full max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
             cols={30}
             rows={10}
             value={project.css}
@@ -151,12 +152,12 @@ export default function Editor() {
         </div>
       </div>
 
-      <div id="js" className="grow flex flex-col m-4 basis-md">
+      <div id="js" className="grow flex flex-col basis-md">
         <h2 className="mb-2">Javascript:</h2>
-        <div className="code bg-[rgb(20,20,20)] min-h-[70vh] flex-col flex p-4">
+        <div className="code bg-[rgb(20,20,20)] min-h-[75vh] flex-col flex p-4">
           <textarea
             name="js"
-            className="bg-[rgb(30,30,30)] h-[70vh] max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
+            className="bg-[rgb(30,30,30)] h-full max-h-[150vh] resize-y my-2 p-1 px-2 rounded"
             cols={30}
             rows={10}
             value={project.js}

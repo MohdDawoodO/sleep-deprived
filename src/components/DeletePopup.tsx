@@ -15,8 +15,9 @@ export default function DeletePopup() {
       className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50"
     >
       <motion.div
-        initial={popupAnim.initial}
-        animate={popupAnim.animate}
+        variants={popupAnim}
+        initial="initial"
+        animate="animate"
         exit={popupAnim.exit}
         className="popup relative bg-[#202020] text-white py-12 px-20 rounded-xl text-center"
       >
@@ -28,7 +29,7 @@ export default function DeletePopup() {
             deleteProject(isDeleting, setIsDeleting, setProjects);
             document.body.style.overflow = "auto";
           }}
-          className="bg-[#3c3c3c] text-white px-12 py-2 mr-8 text-xl hover:bg-[#c22126] duration-200"
+          className="bg-[#3c3c3c] text-white px-12 py-2 mr-8 text-xl hover:bg-[#c22126] duration-200 rounded"
         >
           Yes
         </button>
@@ -42,7 +43,7 @@ export default function DeletePopup() {
             });
             document.body.style.overflow = "auto";
           }}
-          className="bg-[#3c3c3c] text-white px-12 py-2 text-xl hover:bg-[#13b162] transition duration-200"
+          className="bg-[#3c3c3c] text-white px-12 py-2 text-xl hover:bg-[#13b162] transition duration-200 rounded"
         >
           No
         </button>
