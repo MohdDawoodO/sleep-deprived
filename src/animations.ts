@@ -123,3 +123,30 @@ export const scaleAnim = {
   initial: { opacity: 0, scale: 1.1 },
   animate: { opacity: 0.75, scale: 1, transition: { duration: 0.75 } },
 };
+
+export const experienceAnim = (xLoc: number) => ({
+  initial: { opacity: 0, scale: 0.5, x: xLoc },
+  inView: {
+    opacity: 1,
+    scale: 1,
+    x: "0%",
+    transition: { duration: 1, delay: 0.25, type: "tween", ease: "easeOut" },
+  },
+});
+
+export const stagger = {
+  initial: { opacity: 1 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+      staggerChildren: 0.05,
+      when: "beforeChildren",
+    },
+  },
+};
+
+export const letterAnim = {
+  initial: { scale: 0, y: 20 },
+  animate: { scale: 1, y: 0, transition: { duration: 0.1 } },
+};

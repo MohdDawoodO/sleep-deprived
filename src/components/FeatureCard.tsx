@@ -1,12 +1,25 @@
+import { motion } from "motion/react";
+import { experienceAnim } from "../animations";
+
 export default function FeatureCard({
   title,
   description,
+  index,
 }: {
   title: string;
   description: string;
+  index: number;
 }) {
+  const x = -(index * 100 + 50);
+
   return (
-    <div className="min-h-[30vh] flex flex-col justify-center grow basis-md pointer-events-none bg-[#181818] p-12 border-[5px] rounded-2xl border-[#282828] shadow-[0px_0px_20px_rgba(40,40,40,1)]">
+    <motion.div
+      variants={experienceAnim(x)}
+      initial="initial"
+      whileInView="inView"
+      viewport={{ amount: 1, once: true }}
+      className="min-h-[30vh] flex flex-col justify-center grow basis-md pointer-events-none bg-[#181818] p-12 border-[5px] rounded-2xl border-[#282828] shadow-[0px_0px_20px_rgba(40,40,40,1)]"
+    >
       <div className="content">
         <h2 className="text-2xl pb-2 font-medium">{title}</h2>
         <p
@@ -14,6 +27,6 @@ export default function FeatureCard({
           dangerouslySetInnerHTML={{ __html: description }}
         ></p>
       </div>
-    </div>
+    </motion.div>
   );
 }
