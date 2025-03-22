@@ -13,13 +13,16 @@ export default function FeatureCard({
       variants={fadeAnim(0.75)}
       initial="initial"
       whileInView="animate"
+      whileHover="hover"
       viewport={{ amount: 0.8, once: true }}
-      className="min-h-[30vh] flex flex-col justify-center grow basis-md pointer-events-none bg-[#181818] p-12 border-[5px] rounded-2xl border-[#282828] shadow-[0px_0px_20px_rgba(40,40,40,1)]"
+      className="min-h-[30vh] flex flex-col justify-center grow basis-md bg-[#181818] p-12 border-[5px] rounded-2xl border-[#282828] shadow-[0px_0px_20px_rgba(40,40,40,1)]"
     >
       <div className="content">
-        <h2 className="text-2xl pb-2 font-medium">{title}</h2>
+        <h2 className="text-2xl pb-2 font-medium pointer-events-none">
+          {title}
+        </h2>
         <p
-          className="text-lg"
+          className="text-lg pointer-events-none"
           dangerouslySetInnerHTML={{ __html: description }}
         ></p>
       </div>

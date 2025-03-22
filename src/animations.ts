@@ -90,7 +90,16 @@ export const stagger = (value: number) => ({
 export const fadeAnim = (value: number) => ({
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: value, ease: "easeOut" } },
-  exit: { opacity: 0, transition: { duration: value, ease: "easeOut" } },
+  hover: {
+    y: -5,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 15,
+      mass: 1,
+    },
+  },
+  exit: { opacity: 1, transition: { duration: value, ease: "easeOut" } },
 });
 
 export const waveAnim = {

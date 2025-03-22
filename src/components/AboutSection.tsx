@@ -25,8 +25,8 @@ export default function AboutSection() {
           </h1>
         </motion.div>
 
-        {paragraphs.map((para: string) => (
-          <motion.div variants={stagger(0.05)}>
+        {paragraphs.map((para: string, i) => (
+          <motion.div key={i} variants={stagger(0.05)}>
             <h2 className="text-2xl opacity-85 leading-10">
               <Letters text={para} />
             </h2>
