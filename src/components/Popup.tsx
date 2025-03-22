@@ -25,33 +25,33 @@ export default function Popup() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
       exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeOut" } }}
-      className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50"
+      className="fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center bg-[rgba(0,0,0,0.5)] text-lg"
     >
       <motion.div
         variants={popupAnim}
         initial="initial"
         animate="animate"
         exit={popupAnim.exit}
-        className="popup relative bg-[#202020] text-white py-12 px-20 rounded-xl text-center"
+        className="relative rounded-xl bg-[#202020] px-20 py-12 text-center text-white"
       >
         <button
           onClick={() => {
             setIsOpen(false);
             document.body.style.overflow = "auto";
           }}
-          className="cancel absolute top-0 left-full translate-x-[-98%] bg-[#3c3c3c] text-white px-3 py-1 rounded-tr-lg rounded-bl-xl hover:opacity-[92%] duration-200"
+          className="absolute top-0 left-full translate-x-[-98%] rounded-tr-lg rounded-bl-xl bg-[#3c3c3c] px-3 py-1 text-white duration-200 hover:opacity-[92%]"
         >
           X
         </button>
-        <h1 className="font-bold text-2xl mb-6">Name your project</h1>
-        <form className="flex felx-col mb-2" onSubmit={formFill}>
+        <h1 className="mb-6 text-2xl font-bold">Name your project</h1>
+        <form className="mb-2 flex" onSubmit={formFill}>
           <input
-            className="border-2 border-[#3c3c3c] py-1 px-3"
+            className="border-2 border-[#3c3c3c] px-3 py-1"
             value={input}
             type="text"
             onChange={(e) => setInput(e.target.value)}
           />
-          <button className="bg-[#3c3c3c] text-white px-3 hover:opacity-[92%] duration-200">
+          <button className="bg-[#3c3c3c] px-3 text-white duration-200 hover:opacity-[92%]">
             Confirm
           </button>
         </form>

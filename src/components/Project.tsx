@@ -24,13 +24,13 @@ export default function Project({
       initial="initial"
       animate="animate"
       exit={projectAnim.exit}
-      className="bg-[rgb(20,20,20)] grow basis-[27rem] rounded-xl h-[45vh] p-6 px-10 overflow-hidden relative opacity-0"
+      className="relative h-[45vh] grow basis-[27rem] overflow-hidden rounded-xl bg-[rgb(20,20,20)] p-6 px-10 opacity-0"
     >
       <motion.h2 layout="position" className="text-xl font-semibold">
         {title}
       </motion.h2>
 
-      <motion.p layout="position" className=" my-4 line-clamp-11">
+      <motion.p layout="position" className="my-4 line-clamp-11">
         {code !== "" ? code : "<!-- This file is waiting for you to edit-->"}
       </motion.p>
 
@@ -45,19 +45,19 @@ export default function Project({
           });
           document.body.style.overflow = "hidden";
         }}
-        className="absolute top-0 left-full translate-x-[-100%] rounded-tr-lg p-2 w-10 bg-[rgb(50,50,50)] hover:opacity-75 duration-200 ml-[1px]"
+        className="absolute top-0 left-full ml-[1px] w-10 translate-x-[-100%] rounded-tr-lg bg-[rgb(50,50,50)] p-2 duration-200 hover:opacity-75"
       >
         <motion.img layout="position" src={deleteIcon} alt="delete this file" />
       </motion.button>
 
       <Link
-        className="absolute top-0 left-full translate-x-[-200%] w-[2.5rem] h-[2.5rem] p-1 bg-[rgb(50,50,50)] hover:opacity-75 duration-200 flex items-center justify-center rounded-bl-xl"
+        className="absolute top-0 left-full flex h-[2.5rem] w-[2.5rem] translate-x-[-200%] items-center justify-center rounded-bl-xl bg-[rgb(50,50,50)] p-1 duration-200 hover:opacity-75"
         to={`/projects/${id}`}
         onClick={() => (document.body.style.overflow = "hidden")}
       >
         <motion.img
           layout="position"
-          className="w-[1.4rem] h-auto"
+          className="h-auto w-[1.4rem]"
           src={edit}
           alt="edit this file"
         />

@@ -25,7 +25,7 @@ export default function Nav() {
       variants={navAnim}
       initial="initial"
       animate="animate"
-      className="min-h-[10vh] px-24 py-4 md:mb-0 mb-16 font-semibold flex items-center justify-between"
+      className="mb-16 flex min-h-[10vh] items-center justify-between px-24 py-4 font-semibold md:mb-0"
     >
       <h1 className="text-2xl">
         <Link
@@ -42,7 +42,7 @@ export default function Nav() {
             variants={fadeAnim(0.3)}
             exit={fadeAnim(0.3).exit}
             onClick={() => (loc.id ? previewFn() : navigate("/home"))}
-            className="test-button px-6 py-2 border-2 text-[#05da76] border-[#05da76] hover:bg-[#05da76] hover:text-white duration-500"
+            className="border-2 border-[#05da76] px-6 py-2 text-[#05da76] duration-500 hover:bg-[#05da76] hover:text-white"
           >
             {loc.id ? "Test" : "Start"}
           </motion.button>

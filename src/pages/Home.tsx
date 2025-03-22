@@ -26,14 +26,14 @@ export default function Home() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="py-8 px-24 min-h-[90vh]"
+      className="min-h-[90vh] px-24 py-8"
     >
       <AnimatePresence mode="wait">
         {isOpen && <Popup />}
         {isDeleting.delete && <DeletePopup />}
       </AnimatePresence>
 
-      <div className="projects flex flex-wrap gap-8">
+      <div className="flex flex-wrap gap-8">
         <LayoutGroup>
           <AnimatePresence>
             {projects.map((project: any) => {

@@ -21,7 +21,7 @@ export default function Preview() {
     componentsArray.forEach((component) => {
       const startHtml = currentProject.html.replaceAll(
         component.startTag,
-        component.codeStart
+        component.codeStart,
       );
 
       const newHtml = startHtml.replaceAll(component.endTag, component.codeEnd);

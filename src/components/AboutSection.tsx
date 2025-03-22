@@ -13,21 +13,21 @@ export default function AboutSection() {
 
   return (
     <motion.section
-      className="flex flex-wrap justify-center min-h-[90vh] items-center relative px-24"
+      className="relative flex min-h-[90vh] flex-wrap items-center justify-center px-24"
       variants={stagger(0.5)}
       initial="initial"
       animate="animate"
     >
-      <div className="grow basis-xl mb-[8rem]">
+      <div className="mb-[8rem] grow basis-xl">
         <motion.div variants={stagger(0.05)}>
-          <h1 className="text-5xl font-medium leading-14 pb-8">
+          <h1 className="pb-8 text-5xl leading-14 font-medium">
             <Letters text={head} />
           </h1>
         </motion.div>
 
         {paragraphs.map((para: string, i) => (
           <motion.div key={i} variants={stagger(0.05)}>
-            <h2 className="text-2xl opacity-85 leading-10">
+            <h2 className="text-2xl leading-10 opacity-85">
               <Letters text={para} />
             </h2>
           </motion.div>
@@ -36,7 +36,7 @@ export default function AboutSection() {
         <div>
           <motion.a
             variants={fadeAnim(1.5)}
-            className="px-6 py-2 text-xl border-2 text-[#05da76] border-[#05da76] hover:bg-[#05da76] hover:text-white duration-500 inline-block mt-5"
+            className="mt-5 inline-block border-2 border-[#05da76] px-6 py-2 text-xl text-[#05da76] duration-500 hover:bg-[#05da76] hover:text-white"
             href="https://www.youtube.com"
             target="_blank"
           >
@@ -48,7 +48,7 @@ export default function AboutSection() {
       <div className="grow basis-xl backdrop-blur-xs">
         <motion.video
           variants={scaleAnim}
-          className="rounded-3xl border-[rgb(50,50,50)] border-[6px] pointer-events-none opacity-75 backdrop-blur-3xl w-full shadow-[2px_2px_20px_rgba(255,255,255,0.1)]"
+          className="pointer-events-none w-full rounded-3xl border-[6px] border-[rgb(50,50,50)] opacity-75 shadow-[2px_2px_20px_rgba(255,255,255,0.1)] backdrop-blur-3xl"
           src={demoVideo}
           autoPlay
           muted

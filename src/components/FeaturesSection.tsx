@@ -9,19 +9,19 @@ export default function FeatureSection() {
   const text = "Why use Sleep Deprived?";
 
   return (
-    <section className="features flex flex-col px-24 min-h-[100vh] justify-center items-center">
+    <section className="flex min-h-[100vh] flex-col items-center justify-center px-24">
       <motion.div
         variants={stagger(0.05)}
         initial="initial"
         whileInView="animate"
         viewport={{ amount: 1, once: true }}
       >
-        <h1 className="text-4xl font-medium pb-24">
+        <h1 className="pb-24 text-4xl font-medium">
           <Letters text={text} />
         </h1>
       </motion.div>
 
-      <div className="features w-full flex flex-wrap justify-between text-center gap-12">
+      <div className="flex w-full flex-wrap justify-between gap-12 text-center">
         {features.map((feature) => (
           <FeatureCard
             key={feature.title}
