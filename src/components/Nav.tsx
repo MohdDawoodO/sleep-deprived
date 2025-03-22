@@ -39,8 +39,8 @@ export default function Nav() {
       <AnimatePresence>
         {(loc.land || loc.id) && (
           <motion.button
-            variants={fadeAnim}
-            exit={fadeAnim.exit}
+            variants={fadeAnim(0.3)}
+            exit={fadeAnim(0.3).exit}
             onClick={() => (loc.id ? previewFn() : navigate("/home"))}
             className="test-button px-6 py-2 border-2 text-[#05da76] border-[#05da76] hover:bg-[#05da76] hover:text-white duration-500"
           >

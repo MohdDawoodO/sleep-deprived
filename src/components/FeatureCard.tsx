@@ -1,23 +1,19 @@
 import { motion } from "motion/react";
-import { experienceAnim } from "../animations";
+import { fadeAnim } from "../animations";
 
 export default function FeatureCard({
   title,
   description,
-  index,
 }: {
   title: string;
   description: string;
-  index: number;
 }) {
-  const x = -(index * 100 + 50);
-
   return (
     <motion.div
-      variants={experienceAnim(x)}
+      variants={fadeAnim(0.75)}
       initial="initial"
-      whileInView="inView"
-      viewport={{ amount: 1, once: true }}
+      whileInView="animate"
+      viewport={{ amount: 0.8, once: true }}
       className="min-h-[30vh] flex flex-col justify-center grow basis-md pointer-events-none bg-[#181818] p-12 border-[5px] rounded-2xl border-[#282828] shadow-[0px_0px_20px_rgba(40,40,40,1)]"
     >
       <div className="content">

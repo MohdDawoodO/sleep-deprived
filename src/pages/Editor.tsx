@@ -65,10 +65,10 @@ export default function Editor() {
 
   return (
     <motion.main
-      variants={pageAnim}
+      variants={pageAnim(0.1, 0.1, 0.15)}
       initial="initial"
       animate="animate"
-      exit={pageAnim.exit}
+      exit="exit"
       className="py-8 px-24 gap-8 min-h-[90vh] flex flex-wrap"
     >
       <div id="html" className="grow flex flex-col basis-md">
