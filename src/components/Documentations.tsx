@@ -10,7 +10,7 @@ export default function Documentations({ setSection }: any) {
   const componentsArray = components();
   const text = "Components we have";
   const text2 =
-    "NOTE: The fields wrapped in curly braces are required for the code to work";
+    "NOTE: Fill only the fields wrapped in curly braces to make the components work.";
 
   const ref = useRef(null);
 
