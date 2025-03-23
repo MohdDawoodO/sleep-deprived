@@ -28,7 +28,7 @@ export default function Footer() {
       viewport={{ amount: 0.5, once: true }}
       className="mb-16 flex min-h-[10vh] items-center justify-between px-24 py-4 font-semibold md:mb-0"
     >
-      <h1 className="grow-4 text-2xl">MohdDawoodO &copy; 2025</h1>
+      <h1 className="grow-4 text-[1.4rem]">MohdDawoodO &copy; 2025</h1>
 
       <ul className="flex grow justify-between">
         {links.map((link) => (
