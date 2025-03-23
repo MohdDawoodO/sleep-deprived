@@ -9,6 +9,8 @@ import { useEffect, useRef } from "react";
 export default function Documentations({ setSection }: any) {
   const componentsArray = components();
   const text = "Components we have";
+  const text2 =
+    "NOTE: The fields wrapped in curly braces are required for the code to work";
 
   const ref = useRef(null);
 
@@ -28,8 +30,11 @@ export default function Documentations({ setSection }: any) {
         whileInView="animate"
         viewport={{ amount: 1, once: true }}
       >
-        <h1 className="pb-24 text-4xl font-medium">
+        <h1 className="pb-4 text-center text-4xl font-medium">
           <Letters text={text} />
+        </h1>
+        <h1 className="pb-24 text-center text-lg font-light">
+          <Letters text={text2} />
         </h1>
       </motion.div>
 
