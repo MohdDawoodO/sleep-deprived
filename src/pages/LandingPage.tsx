@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { pageAnim } from "../animations";
 import AboutSection from "../components/AboutSection";
 import FeatureSection from "../components/FeaturesSection";
+import Documentations from "../components/Documentations";
 
 export default function LandingPage() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function LandingPage() {
     >
       <AboutSection />
       <FeatureSection />
+      <Documentations />
     </motion.main>
   );
 }

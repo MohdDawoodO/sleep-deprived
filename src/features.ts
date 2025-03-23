@@ -2,11 +2,11 @@ export default function ideFeatures() {
   return [
     {
       title: "Fast, Free and Secure",
-      description: `See your changes in real time, just hit <strong>ctrl + r</strong>`,
+      description: `See your changes update instantly, just hit <strong>Ctrl + R</strong> to refresh!`,
     },
     {
-      title: "No Boilerplate required",
-      description: `Write clean, efficient code, no unnecessary HTML required`,
+      title: "Pre-Styled Components",
+      description: `Flexible, ready-to-use, pre-styled components for your project.`,
     },
     {
       title: "Preconfigured Global Styles",

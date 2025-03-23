@@ -1,12 +1,13 @@
-import { stagger } from "../animations";
-import ideFeatures from "../features";
-import FeatureCard from "./FeatureCard";
 import { motion } from "motion/react";
-import Letters from "./Letters";
 
-export default function FeatureSection() {
-  const features = ideFeatures();
-  const text = "Why use Sleep Deprived?";
+import components from "../componentData";
+import ComponentCard from "./ComponentCard";
+import Letters from "./Letters";
+import { stagger } from "../animations";
+
+export default function Documentations() {
+  const componentsArray = components();
+  const text = "Components we have";
 
   return (
     <section className="flex min-h-[100vh] flex-col items-center justify-center px-24">
@@ -21,13 +22,9 @@ export default function FeatureSection() {
         </h1>
       </motion.div>
 
-      <div className="flex w-full flex-wrap gap-12 text-center">
-        {features.map((feature) => (
-          <FeatureCard
-            key={feature.title}
-            title={feature.title}
-            description={feature.description}
-          />
+      <div className="flex w-full flex-wrap gap-12">
+        {componentsArray.map((component: object, i: number) => (
+          <ComponentCard key={i} component={component} />
         ))}
       </div>
     </section>
