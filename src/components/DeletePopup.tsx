@@ -12,16 +12,16 @@ export default function DeletePopup() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
       exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeOut" } }}
-      className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center text-lg z-50"
+      className="fixed top-0 left-0 z-50 flex h-full w-full items-center justify-center bg-[rgba(0,0,0,0.5)] text-lg"
     >
       <motion.div
         variants={popupAnim}
         initial="initial"
         animate="animate"
         exit={popupAnim.exit}
-        className="popup relative bg-[#202020] text-white py-12 px-20 rounded-xl text-center"
+        className="relative rounded-xl bg-[#202020] px-20 py-12 text-center text-white"
       >
-        <h1 className="font-bold text-2xl mb-6">
+        <h1 className="mb-6 text-2xl font-bold">
           Do you really want to delete this project?
         </h1>
         <button
@@ -29,7 +29,7 @@ export default function DeletePopup() {
             deleteProject(isDeleting, setIsDeleting, setProjects);
             document.body.style.overflow = "auto";
           }}
-          className="bg-[#3c3c3c] text-white px-12 py-2 mr-8 text-xl hover:bg-[#c22126] duration-200 rounded"
+          className="mr-8 rounded bg-[#3c3c3c] px-12 py-2 text-xl text-white duration-200 hover:bg-[#c22126]"
         >
           Yes
         </button>
@@ -43,7 +43,7 @@ export default function DeletePopup() {
             });
             document.body.style.overflow = "auto";
           }}
-          className="bg-[#3c3c3c] text-white px-12 py-2 text-xl hover:bg-[#13b162] transition duration-200 rounded"
+          className="rounded bg-[#3c3c3c] px-12 py-2 text-xl text-white transition duration-200 hover:bg-[#13b162]"
         >
           No
         </button>
@@ -56,12 +56,12 @@ export default function DeletePopup() {
 function deleteProject(
   isDeleting: any,
   setIsDeleting: Function,
-  setProjects: Function
+  setProjects: Function,
 ) {
   let projects = JSON.parse(localStorage.getItem("projects") ?? "[]");
 
   const newProjects = projects.filter(
-    (a: any) => a.id !== isDeleting.projectID
+    (a: any) => a.id !== isDeleting.projectID,
   );
 
   localStorage.setItem("projects", JSON.stringify(newProjects));

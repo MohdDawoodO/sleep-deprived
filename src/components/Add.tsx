@@ -13,7 +13,7 @@ export default function Add() {
         setIsOpen(true);
         document.body.style.overflow = "hidden";
       }}
-      className="bg-[rgb(20,20,20)] grow basis-[27rem] rounded-xl min-h-[45vh] p-6 px-10 overflow-hidden relative cursor-pointer flex flex-col items-center justify-center hover:opacity-85 duration-200"
+      className="relative flex min-h-[45vh] grow basis-[27rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl bg-[rgb(20,20,20)] p-6 px-10 duration-200 hover:opacity-85"
     >
       <motion.p layout="position" className="text-lg">
         Make new project!

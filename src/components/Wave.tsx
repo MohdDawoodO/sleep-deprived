@@ -7,7 +7,7 @@ export default function Wave() {
       viewBox="0 0 1440 363"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute top-[50%] left-0 translate-y-[-50%] z-[-10] w-full"
+      className="absolute top-[50%] left-0 z-[-10] w-full translate-y-[-50%]"
     >
       <motion.path
         variants={waveAnim}
