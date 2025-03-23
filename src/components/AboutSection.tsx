@@ -4,16 +4,20 @@ import { motion } from "motion/react";
 import { fadeAnim, scaleAnim, stagger } from "../animations";
 import Letters from "./Letters";
 
-export default function AboutSection() {
+export default function AboutSection({ section }: any) {
   const head = "Fast, Free, and Browser-Based IDE";
   const paragraphs = [
     "Write and Run HTML, CSS & JavaScript Effortlessly",
     "Code, Debug, and Preview in Real-Time",
   ];
 
+  function scrollToDocs() {
+    section.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <motion.section
-      className="relative flex min-h-[90vh] flex-wrap items-center justify-center px-24"
+      className="relative flex min-h-[90vh] flex-wrap items-center justify-center px-24 py-20"
       variants={stagger(0.5)}
       initial="initial"
       animate="animate"
@@ -34,14 +38,13 @@ export default function AboutSection() {
         ))}
 
         <div>
-          <motion.a
+          <motion.button
             variants={fadeAnim(1.5)}
             className="mt-5 inline-block border-2 border-[#05da76] px-6 py-2 text-xl text-[#05da76] duration-500 hover:bg-[#05da76] hover:text-white"
-            href="https://www.youtube.com"
-            target="_blank"
+            onClick={scrollToDocs}
           >
             Docs
-          </motion.a>
+          </motion.button>
         </div>
       </div>
 

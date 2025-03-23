@@ -9,7 +9,7 @@ export default function FeatureSection() {
   const text = "Why use Sleep Deprived?";
 
   return (
-    <section className="flex min-h-[100vh] flex-col items-center justify-center px-24">
+    <section className="flex min-h-[100vh] flex-col items-center justify-center px-24 py-20">
       <motion.div
         variants={stagger(0.05)}
         initial="initial"

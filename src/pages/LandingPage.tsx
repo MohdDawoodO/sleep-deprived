@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { pageAnim } from "../animations";
 import AboutSection from "../components/AboutSection";
 import FeatureSection from "../components/FeaturesSection";
 import Documentations from "../components/Documentations";
+import Footer from "../components/Footer";
 
 export default function LandingPage() {
+  const [section, setSection] = useState();
+
   useEffect(() => {
     document.body.style.overflowY = "auto";
   });
@@ -17,9 +20,10 @@ export default function LandingPage() {
       animate="animate"
       exit="exit"
     >
-      <AboutSection />
+      <AboutSection section={section} />
       <FeatureSection />
-      <Documentations />
+      <Documentations setSection={setSection} />
+      <Footer />
     </motion.main>
   );
 }

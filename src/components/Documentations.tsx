@@ -4,13 +4,24 @@ import components from "../componentData";
 import ComponentCard from "./ComponentCard";
 import Letters from "./Letters";
 import { stagger } from "../animations";
+import { useEffect, useRef } from "react";
 
-export default function Documentations() {
+export default function Documentations({ setSection }: any) {
   const componentsArray = components();
   const text = "Components we have";
 
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setSection(ref);
+  }, [ref]);
+
   return (
-    <section className="flex min-h-[100vh] flex-col items-center justify-center px-24">
+    <section
+      ref={ref}
+      id="docs"
+      className="flex min-h-[100vh] flex-col items-center justify-center px-24 py-32"
+    >
       <motion.div
         variants={stagger(0.05)}
         initial="initial"
