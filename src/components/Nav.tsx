@@ -10,7 +10,7 @@ export default function Nav() {
   const [loc, setLoc]: any = useState({ id: "", land: false });
 
   function previewFn() {
-    window.open(`/#/preview/${loc.id}`);
+    window.open(`/preview/${loc.id}`);
   }
 
   useEffect(() => {
