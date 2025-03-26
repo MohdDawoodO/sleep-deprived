@@ -20,6 +20,8 @@ export default function Home() {
     setProjects(JSON.parse(localStorage.getItem("projects") ?? "[]"));
   }, []);
 
+  if (!projects.length) return;
+
   return (
     <motion.main
       variants={pageAnim(0.1, 0.1, 0.15)}

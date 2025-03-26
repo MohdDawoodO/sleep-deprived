@@ -17,6 +17,11 @@ export default function Project({
 }) {
   const [isDeleting, setIsDeleting] = useAtom(deletingProject);
 
+  function hide(e: any) {
+    if (e.ctrlKey) return;
+    document.body.style.overflow = "hidden";
+  }
+
   return (
     <motion.div
       layoutId={id}
@@ -53,7 +58,7 @@ export default function Project({
       <Link
         className="absolute top-0 left-full flex h-[2.5rem] w-[2.5rem] translate-x-[-200%] items-center justify-center rounded-bl-xl bg-[rgb(50,50,50)] p-1 duration-200 hover:opacity-75"
         to={`/projects/${id}`}
-        onClick={() => (document.body.style.overflow = "hidden")}
+        onClick={hide}
       >
         <motion.img
           layout="position"
