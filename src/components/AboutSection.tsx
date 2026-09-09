@@ -5,7 +5,7 @@ import { fadeAnim, scaleAnim, stagger } from "../animations";
 import Letters from "./Letters";
 
 export default function AboutSection({ section }: any) {
-  const head = "Fast, Free, and Browser-Based IDE";
+  const head = "Fast, Free, and Browser-Based Text Editor";
   const paragraphs = [
     "Write and Run HTML, CSS & JavaScript Effortlessly",
     "Code, Debug, and Preview in Real-Time",
@@ -24,7 +24,7 @@ export default function AboutSection({ section }: any) {
     >
       <div className="mb-[8rem] grow basis-xl">
         <motion.div variants={stagger(0.05)}>
-          <h1 className="pb-8 text-5xl leading-14 font-medium">
+          <h1 className="pb-8 text-4xl leading-14 font-medium">
             <Letters text={head} />
           </h1>
         </motion.div>

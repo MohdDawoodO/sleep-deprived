@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "npx kill-port 3000 3001 3002",
     "dev": "vite --port 3000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
